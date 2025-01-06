@@ -1,17 +1,15 @@
-
 # Setup Docker Para Projetos Laravel (8, 9, 10 ou 11)
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
 
-### Passo a passo
-Clone Repositório
-```sh
-git clone https://github.com/especializati/setup-docker-laravel.git
-```
+Este repositório contém um ambiente Docker configurado para projetos Laravel, utilizando **PostgreSQL** como banco de dados e **Redis** para cache e filas. O ambiente é ideal para desenvolvimento local, garantindo consistência e facilidade de configuração.
 
-Clone os Arquivos do Laravel
+---
+
+### Passo a Passo
+
+#### Clone o Repositório
 ```sh
-git clone https://github.com/laravel/laravel.git app-laravel
-```
+git clone https://github.com/FelipeHardmann/backend_softpar.git
+cd backend_softpar
 
 
 Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
@@ -31,15 +29,15 @@ cp .env.example .env
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
-APP_NAME="Especializa Ti"
+APP_NAME="Backend Softpar"
 APP_URL=http://localhost:8989
 
-DB_CONNECTION=mysql
+DB_CONNECTION=pgsql
 DB_HOST=db
-DB_PORT=3306
+DB_PORT=5432
 DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=root
+DB_USERNAME=username
+DB_PASSWORD=userpass
 
 CACHE_DRIVER=redis
 QUEUE_CONNECTION=redis
