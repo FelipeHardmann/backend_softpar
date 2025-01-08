@@ -40,7 +40,9 @@ class TaskController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $task = Task::findOrfail($id);
+
+        return new TaskResource(($task));
     }
 
     /**
@@ -48,7 +50,12 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $task = Task::findOrfail($id);
+        $task->update($data);
+ 
+        return new TaskResource($task);
+
     }
 
     /**
